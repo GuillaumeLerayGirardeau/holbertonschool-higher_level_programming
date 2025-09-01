@@ -9,9 +9,9 @@ if number < 0:
 if last_digit > 5:
     result = "is greater than 5"
 elif last_digit <= 5 and last_digit != 0:
-    result = "is less than 6 and not zero"
+    result = "is less than 6 and not 0"
 else:
-    result = "is zero"
+    result = "is 0"
 
 print(f"Last digit of {number} is {last_digit} and {result}")
     

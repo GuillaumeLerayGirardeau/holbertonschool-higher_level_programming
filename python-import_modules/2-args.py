@@ -15,5 +15,5 @@ if __name__ == "__main__":
     if length > 0:
         num_arg = 1
         while num_arg <= length:
-            print(f"{num_arg}: ", argv[num_arg])
+            print(f"{num_arg}:", argv[num_arg])
             num_arg += 1

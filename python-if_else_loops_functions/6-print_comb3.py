@@ -3,6 +3,6 @@
 for i in range(9):
     for y in range(i+1, 10):
         if i != 8:
-            print(f"{i}{y}", end=", ")
+            print("{:d}".format(i) + "{:d}".format(y), end=", ")
         else:
-            print(f"{i}{y}")
+            print("{:d}".format(i) + "{:d}".format(y))

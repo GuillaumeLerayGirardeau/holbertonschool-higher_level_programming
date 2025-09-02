@@ -4,6 +4,9 @@ def uppercase(str):
 
     count = 0
 
+    if len(str) == 0:
+        print("")
+
     for i in str:
         count += 1
         letter = ord(i)

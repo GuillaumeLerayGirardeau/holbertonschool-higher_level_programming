@@ -7,7 +7,7 @@ def uppercase(str):
     if str == "":
         print()
         return
-    
+
     for i in str:
         count += 1
         letter = ord(i)

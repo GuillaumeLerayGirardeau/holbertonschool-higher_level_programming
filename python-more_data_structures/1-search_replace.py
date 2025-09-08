@@ -3,5 +3,8 @@
 def search_replace(my_list, search, replace):
 
     new_list = my_list.copy()
-    new_list[search - 1] = replace
+    idx = search - 1
+
+    if idx < len(my_list):
+        new_list[idx] = replace
     return new_list

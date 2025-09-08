@@ -1,3 +1,3 @@
 # High Level Programming
 
-This folder contains exercises about data structure, lists and turple in Python.
+This folder contains exercises about data structure, lists and tuple in Python.

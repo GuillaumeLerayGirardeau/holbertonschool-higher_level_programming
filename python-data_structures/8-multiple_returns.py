@@ -2,7 +2,6 @@
 
 def multiple_returns(sentence):
 
-
     length = len(sentence)
     if sentence != "":
         first_letter = sentence[0]

@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
                 'M': 1000}
     special = {'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90}
 
-    if type(roman_string) == str:
+    if type(roman_string) is str:
         while count < len(roman_string): 
             if roman_string[count] in numbers:
                 if count + 1 < len(roman_string):

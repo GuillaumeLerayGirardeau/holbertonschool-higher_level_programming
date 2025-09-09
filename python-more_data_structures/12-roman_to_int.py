@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     special = {'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90}
 
     if type(roman_string) is str:
-        while count < len(roman_string): 
+        while count < len(roman_string):
             if roman_string[count] in numbers:
                 if count + 1 < len(roman_string):
                     num += roman_string[count] + roman_string[count + 1]
@@ -21,5 +21,5 @@ def roman_to_int(roman_string):
                     value += numbers.get(roman_string[count])
             count += 1
             num = ""
-            
+
     return value

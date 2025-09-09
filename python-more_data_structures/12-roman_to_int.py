@@ -17,5 +17,5 @@ def roman_to_int(roman_string):
                 else:
                     value += numbers.get(i)
                 last = numbers.get(i)
-    
+
     return value

@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     x = roman_string
     value = 0
     count = 0
-    if type(x) is str :
+    if type(x) is str:
         while count < len(x):
             # I
             if x[count] == 'I':

@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
     count = 0
     if type(x) == str :
         while count < len(x):
-            #I
+            # I
             if x[count] == 'I':
                 if count < (len(x) - 1) and x[count + 1] == 'X':
                     value += 9
@@ -16,10 +16,10 @@ def roman_to_int(roman_string):
                     count += 1
                 else:
                     value += 1
-            #V
+            # V
             elif x[count] == 'V':
                 value += 5
-            #X
+            # X
             elif x[count] == 'X':
                 if count < (len(x) - 1) and x[count + 1] == 'L':
                     value += 40
@@ -29,16 +29,16 @@ def roman_to_int(roman_string):
                     count += 1
                 else:
                     value += 10
-            #L
+            # L
             elif x[count] == 'L':
                 value += 50
-            #C
+            # C
             elif x[count] == 'C':
                 value += 100
-            #D
+            # D
             elif x[count] == 'D':
                 value += 500
-            #M
+            # M
             elif x[count] == 'M':
                 value += 1000
             else:

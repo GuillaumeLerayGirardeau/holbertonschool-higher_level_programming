@@ -1,48 +1,26 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    x = roman_string
     value = 0
     count = 0
-    if type(x) is str:
-        while count < len(x):
-            # I
-            if x[count] == 'I':
-                if count < (len(x) - 1) and x[count + 1] == 'X':
-                    value += 9
-                    count += 1
-                elif count < (len(x) - 1) and x[count + 1] == 'V':
-                    value += 4
-                    count += 1
-                else:
-                    value += 1
-            # V
-            elif x[count] == 'V':
-                value += 5
-            # X
-            elif x[count] == 'X':
-                if count < (len(x) - 1) and x[count + 1] == 'L':
-                    value += 40
-                    count += 1
-                elif count < (len(x) - 1) and x[count + 1] == 'C':
-                    value += 90
-                    count += 1
-                else:
-                    value += 10
-            # L
-            elif x[count] == 'L':
-                value += 50
-            # C
-            elif x[count] == 'C':
-                value += 100
-            # D
-            elif x[count] == 'D':
-                value += 500
-            # M
-            elif x[count] == 'M':
-                value += 1000
-            else:
-                return 0
-            count += 1
+    num = ""
+    numbers = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500,
+                'M': 1000}
+    special = {'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90}
 
-    return value
+    if type(roman_string) == str:
+        while count < len(roman_string): 
+            if roman_string[count] in numbers:
+                if count + 1 < len(roman_string):
+                    num += roman_string[count] + roman_string[count + 1]
+                    if count + 1 < len(roman_string) and num in special:
+                        value += special.get(num)
+                        count += 1
+                    else:
+                        value += numbers.get(roman_string[count])
+                else:
+                    value += numbers.get(roman_string[count])
+            count += 1
+            num = ""
+            
+        return value

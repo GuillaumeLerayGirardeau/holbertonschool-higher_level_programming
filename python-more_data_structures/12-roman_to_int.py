@@ -10,6 +10,9 @@ def roman_to_int(roman_string):
             if count<(len(roman_string)-1) and roman_string[count + 1] == 'X':
                 value += 9
                 count += 1
+            elif count<(len(roman_string)-1) and roman_string[count+1] == 'V':
+                value += 4
+                count += 1
             else:
                 value += 1
         #V

@@ -1,10 +1,11 @@
+#!/usr/bin/python3
 """
 Module Matrix divided
 
 Functions:
     matrix_divided(matrix, div)
 """
-#!/usr/bin/python3
+
 
 def matrix_divided(matrix, div):
     """
@@ -21,7 +22,9 @@ def matrix_divided(matrix, div):
     
     for row in matrix:
         if len(matrix[0]) != len(row):
-            raise TypeError("Each row of the matrix must have the same size")
+            raise TypeError(
+                "Each row of the matrix must have the same size"
+                )
 
     try:
         new_mat = []
@@ -30,8 +33,10 @@ def matrix_divided(matrix, div):
         return new_mat
     except (TypeError, ValueError) as e:
         if e == TypeError:
-            raise TypeError("matrix must be a matrix (list of lists) of " \
-            "integers/floats")
+            raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats"
+                )
         else:
-            raise TypeError("matrix must be a matrix (list of lists) of " \
-            "integers/floats")
+            raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats"
+                )

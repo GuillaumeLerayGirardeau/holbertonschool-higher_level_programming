@@ -8,8 +8,9 @@ Args:
 
 Returns: sum of the two integer
 """
-def add_integer(a, b=98):
 
+
+def add_integer(a, b=98):
 
     """
     Adds two integers

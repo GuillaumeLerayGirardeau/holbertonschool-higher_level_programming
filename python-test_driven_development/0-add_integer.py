@@ -2,11 +2,13 @@
 
 def add_integer(a, b=98):
     """
-    add_integer : adds two integers
+    Adds two integers
 
-    Return the result, or TypeError
-    This function must take two integers. If float value, it will be converted
-    into integer. 
+    Args:
+        a (int): first number
+        b (int): second number
+
+    Returns: sum of the two integer
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")

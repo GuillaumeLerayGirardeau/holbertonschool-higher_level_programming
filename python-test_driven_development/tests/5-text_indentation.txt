@@ -1,0 +1,24 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+"""
+Test file for the function text_indentation
+All tests must pass
+You can test it with the command "python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2"
+"""
+>>> text = "bonjour. ca va ? super."
+
+>>> text_indentation(text)
+bonjour.
+<BLANKLINE>
+ca va ?
+<BLANKLINE>
+super.
+<BLANKLINE>
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string

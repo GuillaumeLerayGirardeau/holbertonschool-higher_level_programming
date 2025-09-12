@@ -5,7 +5,10 @@ class testmaxinteger(unittest.TestCase):
     def test_list(self):
         self.assertAlmostEqual(max_integer([1, 2, 3]), 3)
         self.assertAlmostEqual(max_integer([3]), 3)
+        self.assertAlmostEqual(max_integer([3, 2, 1]), 3)
+        self.assertAlmostEqual(max_integer([1, 3 ,2]), 3)
         self.assertAlmostEqual(max_integer(["a", "b", "c"]), "c")
+        self.assertAlmostEqual(max_integer([]), None)
     def test_errors(self):
         self.assertRaises(TypeError, max_integer, None)
     

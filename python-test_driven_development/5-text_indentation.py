@@ -19,12 +19,14 @@ def text_indentation(text):
 
     space = [".", "?", ":"]
     skip = 0
-    for i in text:
-        if skip == 1 and i == " ":
+    i = 0
+    while i < len(text):
+        if i == 0 or skip == 1:
             skip = 0
-            continue
-        print(i, end="")
-        if i in space:
-            print("")
-            print("")
+            while text[i] == " ":
+                i += 1
+        print(text[i], end="")
+        if text[i] in space:
+            print("\n")
             skip = 1
+        i += 1

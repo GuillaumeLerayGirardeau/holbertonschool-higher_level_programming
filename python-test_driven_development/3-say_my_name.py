@@ -1,7 +1,19 @@
+"""
+Module Say my name
+
+Functions:
+    say_my_name(first_name, last_name="")
+"""
+
 #!/usr/bin/python3
 
-# say_my_name: print "My name is" with a first name and a last name
 def say_my_name(first_name, last_name=""):
+
+    """
+    Print "My name is" with first name and last name
+    First name and last name must be strings
+    Return the ful string, or TypeError
+    """
 
     if not isinstance(first_name, str) or first_name == "":
         raise TypeError("first_name must be a string")

@@ -1,5 +1,11 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
+"""
+Test file for the function say_my_name
+All tests must pass
+You can test it with the command "python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2"
+"""
+
 >>> say_my_name("Bob", "Dylan")
 My name is Bob Dylan
 >>> say_my_name(12, "Dylan")

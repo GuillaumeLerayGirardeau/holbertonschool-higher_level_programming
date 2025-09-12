@@ -22,6 +22,10 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 Traceback (most recent call last):
     ...
 TypeError: div must be a number
+>>> matrix_divided(matrix, float("inf"))
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
 
 >>> matrix = [[1, 2, 3], ["a", "b", "c"]]
 

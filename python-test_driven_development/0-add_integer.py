@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
-# adds two integer 
+"""
+add_integer : adds two integers
+
+Return the result, or TypeError
+This function must take two integers. If float value, it will be converted
+into integer. 
+"""
 def add_integer(a, b=98):
     
     try:

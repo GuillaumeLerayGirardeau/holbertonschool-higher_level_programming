@@ -18,6 +18,10 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     elif not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
+    
+    for row in matrix:
+        if len(matrix[0]) != len(row):
+            raise TypeError("Each row of the matrix must have the same size")
 
     try:
         new_mat = []

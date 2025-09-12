@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module print square
 
@@ -5,7 +6,6 @@ Functions:
     print_square(size)
 """
 
-#!/usr/bin/python3
 
 def print_square(size):
 

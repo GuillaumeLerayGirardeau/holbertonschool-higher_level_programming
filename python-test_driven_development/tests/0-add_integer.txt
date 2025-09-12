@@ -2,6 +2,8 @@
 
 """
 Test file for the function add_integer
+All tests must pass
+You can test it with the command "python3 -m doctest -v ./tests/0-add_integer.txt | tail -2"
 """
 >>> add_integer(1, 2)
 3

@@ -8,10 +8,9 @@ def add_integer(a, b=98):
     This function must take two integers. If float value, it will be converted
     into integer. 
     """
-    try:
-         return int(a) + int(b)
-    except (TypeError, ValueError):
-        if isinstance(a, int):
-            raise TypeError("b must be an integer")
-        else:
-            raise TypeError("a must be an integer")
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    elif not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+    
+    return int(a) + int(b)

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module text_indentation
 
@@ -5,7 +6,6 @@ Functions:
     text_indentation(text)
 """
 
-#!/usr/bin/python3
 
 def text_indentation(text):
 

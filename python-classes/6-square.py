@@ -11,7 +11,7 @@ class Square:
     area: return the area of the square
     size: has a getter and a setter, define the size of the square
     position: has a getter and a setter, define the position of the square
-    my_print: print the square 
+    my_print: print the square
     """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -47,10 +47,10 @@ class Square:
         self.__position = value
 
     def my_print(self):
+        for i in range(self.__position[1]):
+            print("")
         if self.__size == 0:
             print("")
         else:
-            for i in range(self.__position[1]):
-                print("")
             for i in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)

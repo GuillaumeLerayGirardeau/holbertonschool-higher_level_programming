@@ -8,8 +8,10 @@ This module define a Square class
 class Square:
     """
     Define a Square class
-    Square class having a private size attribute
-    Don't forget the uppercase character
+    area: return the area of the square
+    size: has a getter and a setter, define the size of the square
+    position: has a getter and a setter, define the position of the square
+    my_print: print the square 
     """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -48,17 +50,7 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            y = 0
-            while y < self.__position[1]:
+            for i in range(self.__position[1]):
                 print("")
-                y += 1
             for i in range(self.__size):
-                x = 0
-                y = 0
-                while x < self.__size - 1:
-                    while y < self.__position[0]:
-                        print(" ", end="")
-                        y += 1
-                    print("#", end="")
-                    x += 1
-                print("#")
+                print(" " * self.__position[0] + "#" * self.__size)

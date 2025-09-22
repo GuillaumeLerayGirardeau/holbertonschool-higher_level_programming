@@ -24,7 +24,8 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    Rectangle class, inherits from BaseGeometry
+    Rectangle class
+    don't forget the uppercase character
     """
     def __init__(self, width, height):
         __width = super().integer_validator("width", width)

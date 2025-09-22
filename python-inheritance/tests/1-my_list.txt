@@ -22,3 +22,6 @@ You can test it with the command "python3 -m doctest -v ./tests/1-my_list.txt | 
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'int' and 'str'
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]

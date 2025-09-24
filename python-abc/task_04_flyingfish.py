@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""
+class fish, bird, and flying fish that inherits from both
+"""
 
 
 class Fish():
+    """
+    Define a fish
+    """
 
     def swim(self):
         print("The fish is swimming")
@@ -11,6 +17,9 @@ class Fish():
 
 
 class Bird():
+    """
+    Define a bird
+    """
 
     def fly(self):
         print("The bird is flying")
@@ -20,7 +29,9 @@ class Bird():
 
 
 class FlyingFish(Fish, Bird):
-    
+    """
+    Define a flying fish
+    """
     def fly(self):
         print("The flying fish is soaring!")
 

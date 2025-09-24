@@ -19,7 +19,7 @@ class CountedIterator():
         return self.counter
 
     def __next__(self):
-        self.counter += 1
-        if self.counter > self.max_value:
+        if self.counter >= self.max_value:
             raise StopIteration
+        self.counter += 1
         return next(self.iterator)

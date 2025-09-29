@@ -1,4 +1,4 @@
-#!/usr-bin/python3
+#!/usr/bin/python3
 """
 return the dictionnary descritpion with simple data structure
 """

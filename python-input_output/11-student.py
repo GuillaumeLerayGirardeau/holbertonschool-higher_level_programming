@@ -26,4 +26,4 @@ class Student:
 
     def reload_from_json(self, json):
         for i in self.__dict__:
-            self.__dict__[i] = json[i]
+            self.__dict__[i] = json.get(i, self.__dict__[i])

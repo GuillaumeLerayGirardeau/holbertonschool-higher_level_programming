@@ -12,9 +12,12 @@ def convert_csv_to_json(csv_file):
     This function convert csv file to json file
     """
     try:
+        new_data = []
+        with open(csv_file) as file:
+            for i in csv.DictReader(file):
+                new_data.append(i)
         with open("data.json", "w") as file:
-            with open(csv_file) as open_csv:
-                json.dump(csv.DictReader(open_csv), file)
-                return True
+            json.dump(new_data, file)
+        return True
     except (FileNotFoundError, TypeError):
         return False

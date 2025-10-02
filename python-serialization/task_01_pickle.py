@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-import pickle
 """
 CustomObject class
 """
+import pickle
 
 
 class CustomObject():

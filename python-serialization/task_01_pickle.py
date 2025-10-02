@@ -17,13 +17,14 @@ class CustomObject():
         self.is_student = is_student
 
     def display(self):
-        print(f"Name: {self.name}") + (f"\nAge: {self.age}") + (
-            f"\nIs Student: {self.is_student}"
-            )
+        print(f"Name: {self.name}\nAge: {self.age}") + (
+            f"\nIs Student: {self.is_student}")
 
     def serialize(self, filename):
-        pickle.dump(self, filename)
+        with open(filename, "wb") as file:
+            pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
-        return pickle.load(filename)
+        with open(filename, "rb") as file:
+            return pickle.load(file)

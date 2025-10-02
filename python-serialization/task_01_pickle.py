@@ -17,8 +17,8 @@ class CustomObject():
         self.is_student = is_student
 
     def display(self):
-        print(f"Name: {self.name}\nAge: {self.age}") + (
-            f"\nIs Student: {self.is_student}")
+        print(f"Name: {self.name}\nAge: {self.age}")
+        print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename):
         with open(filename, "wb") as file:

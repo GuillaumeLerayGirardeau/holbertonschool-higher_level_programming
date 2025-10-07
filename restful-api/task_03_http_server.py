@@ -13,6 +13,9 @@ class my_server(http.server.BaseHTTPRequestHandler):
     """
 
     def do_GET(self):
+        """
+        get user commands and return accurate data
+        """
         if self.path == "/data":
             self.send_response(200)
             john_data = {"name": "John", "age": 30, "city": "New York"}

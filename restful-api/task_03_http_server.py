@@ -14,13 +14,13 @@ class my_server(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         """
-        get user commands and return accurate data
+        get user commands and returns accurate data
         """
         if self.path == "/data":
             self.send_response(200)
             john_data = {"name": "John", "age": 30, "city": "New York"}
             json_data = json.dumps(john_data)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json_data.encode("utf-8"))
         elif self.path == "/info":
@@ -28,7 +28,7 @@ class my_server(http.server.BaseHTTPRequestHandler):
             info = {"version": "1.0",
                     "description": "A simple API built with http.server"}
             json_info = json.dumps(info)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json_info.encode("utf-8"))
         elif self.path == "/status":

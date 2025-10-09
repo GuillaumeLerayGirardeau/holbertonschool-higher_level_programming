@@ -8,7 +8,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {"guillaume": {"name": "Guillaume", "age": 24, "city": "Laval"}}
+users = {}
 user_keys = ["username", "name", "age", "city"]
 
 

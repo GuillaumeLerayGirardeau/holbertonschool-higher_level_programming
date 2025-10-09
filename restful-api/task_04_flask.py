@@ -43,7 +43,7 @@ def add_user():
     new_user = request.get_json()
     for i in new_user:
         if i not in user_keys:
-            return {"error":"Username is required"}
+            return {"error": "Username is required"}
     users[new_user["username"]] = new_user
     return {"message": "User added", "user": new_user}
 

@@ -17,7 +17,7 @@ def home():
     """
     Home page
     """
-    return "Welcome to the Flask API!"
+    return "Welcome to the Flask API!", 200
 
 
 @app.route("/data", methods=["GET"])
@@ -28,7 +28,7 @@ def json_data():
     users_names = []
     for i in users:
         users_names.append(i)
-    return jsonify(users_names)
+    return jsonify(users_names), 200
 
 
 @app.route("/status", methods=["GET"])
@@ -36,7 +36,7 @@ def show_status():
     """
     Display status
     """
-    return "OK"
+    return "OK", 200
 
 
 @app.route("/users/<username>", methods=["GET"])
@@ -45,22 +45,22 @@ def user_info(username):
     Display user information based on username
     """
     if users.get(username) is not None:
-        return jsonify(users.get(username))
+        return jsonify(users.get(username)), 200
     else:
-        return {"error": "User not found"}
+        return {"error": "User not found"}, 404
 
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
     """
-    Add a user 
+    Add a user
     """
     new_user = request.get_json()
     for i in new_user:
         if i not in user_keys:
-            return {"error": "Username is required"}
+            return {"error": "Username is required"}, 400
     users[new_user["username"]] = new_user
-    return {"message": "User added", "user": new_user}
+    return {"message": "User added", "user": new_user}, 201
 
 
 if __name__ == "__main__":

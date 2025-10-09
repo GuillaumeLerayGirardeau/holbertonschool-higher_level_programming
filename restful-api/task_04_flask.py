@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Create an API with Flask."""
 from flask import Flask, jsonify, request
 

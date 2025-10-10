@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Create an API with basic security tests
 """
@@ -16,9 +16,9 @@ jwt = JWTManager(app)
 
 users = {
     "user1": {"username": "user1", 
-              "password": generate_password_hash("Columbo"), "role": "user"},
+              "password": generate_password_hash("password"), "role": "user"},
     "admin1": {"username": "admin1", 
-               "password": generate_password_hash("Pokemon"), "role": "admin"}
+               "password": generate_password_hash("password"), "role": "admin"}
 }
 @app.route("/")
 def home():

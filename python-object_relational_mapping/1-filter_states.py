@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-import MySQLdb
-import sys
-
 """
 Lists all states with a name starting with N from the database hbtn_0e_0_usa
 """
+
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     cursor = db_connection.cursor()
     states_num = cursor.execute(
         "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
-        )
+    )
     while i < states_num:
         m = cursor.fetchone()
         print(m)

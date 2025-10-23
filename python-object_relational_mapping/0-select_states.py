@@ -29,7 +29,7 @@ if __name__ == "__main__":
         exit()
 
     cursor = db_connection.cursor()
-    states_num = cursor.execute("SELECT * FROM states")
+    states_num = cursor.execute("SELECT * FROM states ORDER BY states.id")
     while i < states_num:
         m = cursor.fetchone()
         print(m)

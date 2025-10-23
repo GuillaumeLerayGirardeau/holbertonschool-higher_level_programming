@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     cursor = db_connection.cursor()
     states_num = cursor.execute(
-        "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id"
+        "SELECT id, name FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
     )
     while i < states_num:
         m = cursor.fetchone()

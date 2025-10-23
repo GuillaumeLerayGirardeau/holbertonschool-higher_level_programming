@@ -29,8 +29,9 @@ if __name__ == "__main__":
         exit()
 
     state_name_search = arguments[3]
-    sql_query = "SELECT id, name FROM states WHERE BINARY name = '{0}' ORDER BY id".format(
-        state_name_search)
+    sql_query = ("SELECT id, name FROM states \
+                 WHERE BINARY name = '{0}' ORDER BY id"
+                 .format(state_name_search,))
 
     cursor = db_connection.cursor()
 

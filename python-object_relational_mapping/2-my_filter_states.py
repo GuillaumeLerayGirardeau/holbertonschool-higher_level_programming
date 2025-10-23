@@ -33,13 +33,13 @@ if __name__ == "__main__":
 
     try:
         states_num = cursor.execute(
-            "SELECT id, name FROM states WHERE name = %s ORDER BY id",
+            "SELECT id, name FROM states WHERE BINARY name = %s ORDER BY id",
             (state_name_search,)
         )
-        while i < states_num:
-            m = cursor.fetchone()
-            print(m)
-            i += 1
+        m = cursor.fetchall()
+        for i in m:
+            print(i)
+
     except Exception as e:
         print("Error :", e)
         exit()

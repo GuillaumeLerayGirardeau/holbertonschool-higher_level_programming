@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     state_name_search = arguments[3]
     sql_query = ("SELECT id, name FROM states \
-                 WHERE BINARY name = '{0}' ORDER BY id"
+                 WHERE BINARY name = '{0}' ORDER BY id ASC"
                  .format(state_name_search,))
 
     cursor = db_connection.cursor()

@@ -33,9 +33,9 @@ if __name__ == "__main__":
     cursor = db_connection.cursor()
 
     try:
-        query = (state_name_search,)
         cursor.execute(
-            "SELECT id, name FROM states WHERE BINARY name = %s ORDER BY id ASC", (state_name_search,)
+            "SELECT id, name FROM states WHERE BINARY \
+             name = %s ORDER BY id ASC", (state_name_search,)
         )
         m = cursor.fetchall()
         for i in m:

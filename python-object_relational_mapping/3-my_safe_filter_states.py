@@ -29,15 +29,13 @@ if __name__ == "__main__":
         exit()
 
     state_name_search = arguments[3]
-    sql_query = ("SELECT id, name FROM states \
-                 WHERE BINARY name = '{0}' ORDER BY id ASC"
-                 .format(state_name_search,))
 
     cursor = db_connection.cursor()
 
     try:
+        query = (state_name_search,)
         cursor.execute(
-            sql_query
+            "SELECT id, name FROM states WHERE BINARY name = %s ORDER BY id ASC", (query)
         )
         m = cursor.fetchall()
         for i in m:

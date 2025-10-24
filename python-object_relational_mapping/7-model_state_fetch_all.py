@@ -9,17 +9,18 @@ from sqlalchemy.orm import sessionmaker
 from model_state import State
 import sys
 
-arg = sys.argv[1:]
+if __name__ == "__main__":
 
-engine = create_engine(
-    f"mysql+mysqldb://{arg[0]}:{arg[1]}@localhost:3306/{arg[2]}", 
-    pool_pre_ping=True)
+    arg = sys.argv[1:]
 
+    engine = create_engine(
+        f"mysql+mysqldb://{arg[0]}:{arg[1]}@localhost:3306/{arg[2]}",
+        pool_pre_ping=True)
 
-Session = sessionmaker(bind=engine)
-session = Session()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-states = session.query(State).all()
+    states = session.query(State).order_by(State.id).all()
 
-for state in states:
-    print(f"{state.id}: {state.name}")
+    for state in states:
+        print(f"{state.id}: {state.name}")

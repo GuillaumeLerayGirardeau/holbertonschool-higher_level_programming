@@ -23,7 +23,7 @@ if __name__ == "__main__":
     existing_state = session.query(State).filter_by(name="Louisiana").first()
 
     if not existing_state:
-        new_state = State(name = "Louisiana")
+        new_state = State(name="Louisiana")
         session.add(new_state)
         session.commit()
         print(new_state.id)

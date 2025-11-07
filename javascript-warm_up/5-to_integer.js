@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Print the first argument if the first argument can be converted to an integer*/
+/* Print the first argument if the first argument can be converted to an integer */
 
 const number = parseInt(process.argv[2]);
 if (isNaN(number)) {

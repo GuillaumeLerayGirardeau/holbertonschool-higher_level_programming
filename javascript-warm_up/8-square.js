@@ -8,7 +8,7 @@ if (isNaN(squareSize)) {
 } else {
   for (let ySize = 0; ySize < squareSize; ySize++) {
     for (let xSize = 0; xSize < squareSize; xSize++) {
-      process.stdout.write('#');
+      process.stdout.write('X');
     }
     console.log('');
   }

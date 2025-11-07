@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Prints x times “C is fun” */
+/* Prints x times "C is fun" */
 
 let printNumber = parseInt(process.argv[2]);
 if (isNaN(printNumber)) {

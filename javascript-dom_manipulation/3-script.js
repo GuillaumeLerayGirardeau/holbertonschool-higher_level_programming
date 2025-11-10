@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* adds the class red to the header element when the user clicks */
+/* Toggles the class of the header element when the user clicks */
 
 const toggleHeader = document.getElementById('toggle_header');
 toggleHeader.addEventListener('click', () => changeColor(toggleHeader));

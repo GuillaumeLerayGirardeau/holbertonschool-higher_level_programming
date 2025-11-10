@@ -1,3 +1,5 @@
 #!/usr/bin/node
 
-const header = document.querySelector("header").style.color = "#FF0000";
+/* Updates the text color of the header element to red */
+
+document.querySelector('header').style.color = '#FF0000';

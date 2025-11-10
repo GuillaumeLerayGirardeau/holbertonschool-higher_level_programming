@@ -5,9 +5,13 @@
 fetchCharacter();
 
 async function fetchCharacter () {
-  const response = await fetch('https://swapi-api.hbtn.io/api/people/5/?format=json');
-  const charaName = await response.json();
-  const starWarsName = charaName.name;
-  const character = document.getElementById('character');
-  character.innerHTML = starWarsName;
+  try {
+    const response = await fetch('https://swapi-api.hbtn.io/api/people/5/?format=json');
+    const charaName = await response.json();
+    const starWarsName = charaName.name;
+    const character = document.getElementById('character');
+    character.innerHTML = starWarsName;
+  } catch (error) {
+    console.error(error);
+  }
 }

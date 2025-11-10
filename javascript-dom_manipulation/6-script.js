@@ -2,16 +2,10 @@
 
 /* Fetches the character name from this URL: https://swapi-api.hbtn.io/api/people/5/?format=json */
 
-fetchCharacter();
-
-async function fetchCharacter () {
-  try {
-    const response = await fetch('https://swapi-api.hbtn.io/api/people/5/?format=json');
-    const charaName = await response.json();
-    const starWarsName = charaName.name;
+fetch('https://swapi-api.hbtn.io/api/people/5/?format=json')
+  .then(response => response.json())
+  .then(starWars => {
+    const starWarsName = starWars.name;
     const character = document.getElementById('character');
     character.innerHTML = starWarsName;
-  } catch (error) {
-    console.error(error);
-  }
-}
+})

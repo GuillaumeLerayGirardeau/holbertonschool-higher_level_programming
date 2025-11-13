@@ -7,16 +7,16 @@ Template function that generates invitations
 
 def generate_invitations(template, attendees):
 
-    if template == None or len(template) <= 0:
+    if template is None:
         print("Template is empty, no output files generated.")
         return
-    elif type(template) is not str:
+    elif not isinstance(template, str):
         print(f"Error: template is {type(template)} and not str")
         return
-    elif attendees == None or len(attendees) <= 0:
+    elif attendees is None:
         print("No data provided, no output files generated.")
         return
-    elif type(attendees) is not list:
+    elif not isinstance(attendees, list):
         print(f"Error: attendees is {type(attendees)} and not list")
         return
     else:
@@ -24,8 +24,6 @@ def generate_invitations(template, attendees):
             if type(element) is not dict:
                 print(f"Error: attendees is a list with {type(element)} and not only dictionaries")
                 return
-
-
 
     for dictionary in attendees:
         for key in dictionary:

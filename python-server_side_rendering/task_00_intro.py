@@ -9,11 +9,13 @@ def generate_invitations(template, attendees):
 
     if template == None:
         print("Template is empty, no output files generated.")
+        return
     elif type(template) is not str:
         print(f"Error: template is {type(template)} and not str")
         return
     elif attendees == None:
         print("No data provided, no output files generated.")
+        return
     elif type(attendees) is not list:
         print(f"Error: attendees is {type(attendees)} and not list")
         return

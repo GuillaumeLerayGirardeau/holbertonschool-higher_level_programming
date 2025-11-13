@@ -9,32 +9,31 @@ Template function that generates invitations
 
 
 def generate_invitations(template, attendees):
+    """
+    Python function that generate a invitation
+    """
 
     if template is None:
         print("Template is empty, no output files generated.")
         return
-    elif not isinstance(template, str):
-        print(f"Error: template is {type(template)} and not str")
+    elif not isinstance(template, str) or not isinstance(attendees, list):
+        print("Template must be a string and attendees a list of dictionaries")
         return
     elif attendees is None:
         print("No data provided, no output files generated.")
         return
-    elif not isinstance(attendees, list):
-        print(f"Error: attendees is {type(attendees)} and not list")
-        return
-    else:
-        for element in attendees:
-            if type(element) is not dict:
-                print(f"Error: attendees is a list with \
-                      {type(element)} and not only dictionaries")
-                return
 
     needed_keys = ["name", "event_title", "event_date", "event_location"]
 
     for dictionary in attendees:
-        for keys in needed_keys:
-            if keys not in dictionary:
-                dictionary[keys] = "N/A"
+        if not isinstance(dictionary, dict):
+            print("Attendees must be a list of dictionaries")
+            return
+        for key in dictionary:
+            if key not in needed_keys or dictionary[key] is None:
+                dictionary[key] = "N/A"
+
+    for dictionary in attendees:
         for key in dictionary:
             if dictionary[key] is None:
                 dictionary[key] = "N/A"

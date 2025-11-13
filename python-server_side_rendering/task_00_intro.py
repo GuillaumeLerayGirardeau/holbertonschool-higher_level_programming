@@ -7,13 +7,13 @@ Template function that generates invitations
 
 def generate_invitations(template, attendees):
 
-    if template == None:
+    if template == None or len(template) <= 0:
         print("Template is empty, no output files generated.")
         return
     elif type(template) is not str:
         print(f"Error: template is {type(template)} and not str")
         return
-    elif attendees == None:
+    elif attendees == None or len(attendees) <= 0:
         print("No data provided, no output files generated.")
         return
     elif type(attendees) is not list:

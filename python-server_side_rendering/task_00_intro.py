@@ -24,8 +24,13 @@ def generate_invitations(template, attendees):
             if type(element) is not dict:
                 print(f"Error: attendees is a list with {type(element)} and not only dictionaries")
                 return
+            
+    needed_keys = ["name", "event_title", "event_date", "event_location"]
 
     for dictionary in attendees:
+        for keys in needed_keys:
+            if not keys in dictionary:
+                dictionary[keys] = "N/A"
         for key in dictionary:
             if dictionary[key] == None:
                 dictionary[key] = "N/A"

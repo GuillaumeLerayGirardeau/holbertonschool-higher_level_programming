@@ -41,18 +41,9 @@ def generate_invitations(template, attendees):
 
     try:
         invit_number = 1
-        for i in attendees:
-            new_template = template
-            new_template = new_template.replace("{name}", i["name"])
-            new_template = new_template.replace(
-                "{event_title}", i["event_title"])
-            new_template = new_template.replace(
-                "{event_date}", i["event_date"])
-            new_template = new_template.replace(
-                "{event_location}", i["event_location"])
-
+        for attendee in attendees:
             with open(f"output_{invit_number}.txt", "w") as f:
-                f.write(new_template)
+                f.write(template.format(**attendee))
 
             invit_number += 1
 

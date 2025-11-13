@@ -11,16 +11,24 @@ def generate_invitations(template, attendees):
         print("Template is empty, no output files generated.")
     elif type(template) is not str:
         print(f"Error: template is {type(template)} and not str")
-        exit()
+        return
     elif attendees == None:
         print("No data provided, no output files generated.")
     elif type(attendees) is not list:
         print(f"Error: attendees is {type(attendees)} and not list")
+        return
     else:
-        for dictionary in attendees:
-            for key in dictionary:
-                if dictionary[key] == None:
-                    dictionary[key] = "N/A"
+        for element in attendees:
+            if type(element) is not dict:
+                print(f"Error: attendees is a list with {type(element)} and not only dictionaries")
+                return
+
+
+
+    for dictionary in attendees:
+        for key in dictionary:
+            if dictionary[key] == None:
+                dictionary[key] = "N/A"
     
     try:
         invit_number = 1

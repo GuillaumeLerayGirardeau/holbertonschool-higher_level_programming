@@ -48,7 +48,13 @@ def products():
                     row['id'] = int(row['id'])
                     products.append(row)
         elif source == 'sql':
-            products = read_sqlite()
+            connection = sqlite3.connect('products.db')
+            connection.row_factory = sqlite3.Row  
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM products")
+            rows = cursor.fetchall()
+            products = [dict(row) for row in rows]
+            connection.close()
         else:
             products = "Wrong source"
     except Exception:
@@ -73,19 +79,6 @@ def products():
         else:
             return render_template('product_display.html', products = "Product not found")
         
-def read_sqlite():
-
-    connection = sqlite3.connect('products.db')
-    connection.row_factory = sqlite3.Row  
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM products")
-    rows = cursor.fetchall()
-    return [dict(row) for row in rows]
-
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

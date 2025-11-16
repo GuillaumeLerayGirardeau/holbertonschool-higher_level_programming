@@ -32,28 +32,23 @@ def items():
 @app.route('/products')
 def products():
     source = request.args.get('source')
-    if not source:
+    if not source or not os.path.exists(source):
         products = []
         return render_template('product_display.html', products = products)
 
+    ext = os.path.splitext(source)[1].lower()
     try:
-        if source == 'json':
-            with open('products.json', 'r', encoding='utf-8') as f:
+        with open(source, 'r', encoding='utf-8') as f:
+            if ext == '.json':
                 products = json.load(f)
-        elif source == 'csv':
-            with open('products.csv', 'r', encoding='utf-8') as f:
+            elif ext == '.csv':
                 data = csv.DictReader(f)
                 products = []
                 for row in data:
                     row['id'] = int(row['id'])
                     products.append(row)
-        else:
-            products = "Wrong source"
     except Exception:
         products = []
-
-    if isinstance(products, str):
-        return render_template('product_display.html', products = products)
 
     id = request.args.get('id')
     if id is None:

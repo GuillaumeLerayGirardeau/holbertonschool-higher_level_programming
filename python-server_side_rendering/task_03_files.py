@@ -51,10 +51,17 @@ def products():
     if id is None:
         return render_template('product_display.html', products = products)
     else:
-        if any(id in p.id for p in products):
-            return render_template('product_display.html', products = products[id])
+        try:
+            id = int(id)
+        except ValueError:
+            return render_template('product_display.html', products = "Product not found")
+
+        product = next((p for p in products if p['id'] == id), None)
+        if product:
+            prod_list = [product]
+            return render_template('product_display.html', products = prod_list)
         else:
-            return render_template('product_display.html', products = products[id])
+            return render_template('product_display.html', products = "Product not found")
 
 
 if __name__ == '__main__':

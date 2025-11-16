@@ -43,7 +43,10 @@ def products():
                 products = json.load(f)
             elif ext == '.csv':
                 data = csv.DictReader(f)
-                products = [row for row in data]
+                products = []
+                for row in data:
+                    row['id'] = int(row['id'])
+                    products.append(row)
     except Exception:
         products = []
 
